@@ -1,5 +1,8 @@
 # ChartMuseum
 
+make build-cross
+DOCKER_BUILDKIT=1 docker build . -t phntom/chartmuseum:v0.15.1
+
 [![GitHub Actions status](https://github.com/helm/chartmuseum/workflows/build/badge.svg)](https://github.com/helm/chartmuseum/actions?query=workflow%3Abuild)
 [![Go Report Card](https://goreportcard.com/badge/github.com/helm/chartmuseum)](https://goreportcard.com/report/github.com/helm/chartmuseum)
 [![GoDoc](https://godoc.org/github.com/helm/chartmuseum?status.svg)](https://godoc.org/github.com/helm/chartmuseum)
