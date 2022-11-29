@@ -12,8 +12,6 @@ jobs:
       - image: docker.l6.ee/toptal/builder:0.1.3@sha256:9d1eee9d265e8632d735d4e6b5cfd3602f979d104e91093c87a02135ecb718a9
     resource_class: phntom/ornea
     steps:
-      - setup_remote_docker:
-          version: 20.10.18
       - checkout
       - run: make bootstrap
 
