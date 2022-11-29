@@ -9,11 +9,14 @@ general:
 jobs:
   build:
     docker:
-      - image: docker.l6.ee/toptal/builder:0.1.3@sha256:9d1eee9d265e8632d735d4e6b5cfd3602f979d104e91093c87a02135ecb718a9
+      - image:  docker.l6.ee/builder/go:0.0.1@sha256:739ca532b13a4f3d5ff6bc824f02aa225e53b88d22a74368bab12ea15798a1dc
     resource_class: phntom/ornea
     steps:
       - checkout
       - run: make bootstrap
+      - run: make test
+      - run: make build-cross
+      - run: sudo pip install virtualenv && make acceptance
 
 workflows:
   chartmuseum:
