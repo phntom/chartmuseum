@@ -14,7 +14,10 @@ jobs:
     steps:
       - checkout
       - run: make bootstrap
-      - run: make test
+      - run:
+          name: make test
+          command: make test
+          no_output_timeout: 30m
       - run: make build-cross
       - run: sudo pip install virtualenv && make acceptance
 
