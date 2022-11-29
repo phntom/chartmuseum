@@ -9,7 +9,7 @@ general:
 jobs:
   build:
     docker:
-      - image:  docker.l6.ee/builder/go:0.0.1@sha256:739ca532b13a4f3d5ff6bc824f02aa225e53b88d22a74368bab12ea15798a1dc
+      - image:  docker.l6.ee/builder/go:0.0.2@sha256:e9cca8997511614963dd0e681209efe62071f67e6a3021c4fb560a08b855de50
     resource_class: phntom/ornea
     steps:
       - checkout
@@ -19,7 +19,7 @@ jobs:
           command: make test
           no_output_timeout: 30m
       - run: make build-cross
-      - run: sudo pip install virtualenv && make acceptance
+      - run: pip install virtualenv && make acceptance
 
 workflows:
   chartmuseum:
